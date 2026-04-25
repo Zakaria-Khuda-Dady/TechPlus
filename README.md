@@ -1,45 +1,98 @@
-# NodeJs, Express, EJS & MongoDB Blog - CRUD
+# TechPulse — Developer Blog Platform
 
-![alt text](/readme-image.jpg?raw=true)
+A full-stack blog platform built for developers, featuring article management, 
+an admin panel, and a clean cyberpunk-inspired UI.
 
-## You need:
-- NodeJs
-- Database (MongoDB) Free Cluster
+## Live Demo
 
-## Setup Database
-Sign up for MongoDB free database cluster:  [MongoDB](https://www.mongodb.com/)
+> [Coming soon — deploying to AWS EC2]
 
-## Create .env file
-Create a .env file to store your credentials. Example below:
+---
 
-```
-MONGODB_URI=mongodb+srv://<username>:<password>@clusterName.xxxxxxx.mongodb.net/blog
-JWT_SECRET=MySecretBlog
-```
+## Preview
 
-## Installation
-To install and run this project - install dependencies using npm and then start your server:
+### Home Page
+The landing page displays the latest developer articles with titles and publish 
+dates. Articles are loaded dynamically from MongoDB.
 
-```
-$ npm install
-$ npm run dev
-```
+![Home Page](screenshots/home.png)
 
-## Design Files
-The Blog layout is in a Figma(.fig) file under the "Design Files".
+---
 
-[View Live Figma Prototype](https://www.figma.com/proto/Vpc5J1ajnwDTT96q0IUFDJ/NodeJs-Blog?page-id=0%3A1&type=design&node-id=48-119&viewport=-194%2C377%2C0.17&scaling=min-zoom&starting-point-node-id=48%3A119)
+### Article Feed
+Articles are listed with a **Load More** button for pagination, keeping the 
+page clean and fast without loading everything at once.
 
+![Article Feed](screenshots/articles.png)
 
-### YouTube Channels
+---
 
-[Subscribe to TheNetNinja](https://www.youtube.com/@NetNinja)
+### About Page
+Describes the mission of TechPulse and the topics covered — Node.js, MongoDB, 
+REST APIs, frontend frameworks, and DevOps/CI-CD.
 
-[Subscribe to RaddyDev](https://www.youtube.com/@RaddyDev)
+![About Page](screenshots/about.png)
 
+---
 
-### Website
-[www.raddy.dev](https://www.raddy.dev)
+### Contact Page
+A contact form allowing visitors to send messages directly from the site.
 
-### Donations
-[Buy me a Coffee](https://www.buymeacoffee.com/RaddyTheBrand)
+![Contact Page](screenshots/contact.png)
+
+---
+
+### Admin Panel
+A secure admin panel protected by JWT authentication. Admins can sign in or 
+register to manage articles — create, edit, and delete posts.
+
+![Admin Panel](screenshots/admin.png)
+
+---
+
+## Features
+
+- Browse and read developer articles
+- Search articles by keyword
+- Load more articles with pagination
+- Admin panel with secure login and registration
+- Create, edit, and delete articles (admin only)
+- Contact form
+- Session-based authentication with JWT
+- MongoDB session persistence
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Runtime | Node.js |
+| Framework | Express.js |
+| Templating | EJS + Express EJS Layouts |
+| Database | MongoDB + Mongoose |
+| Authentication | JWT + Bcrypt |
+| Session Storage | connect-mongo |
+| Styling | Custom CSS |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js v18+
+- MongoDB (local or MongoDB Atlas)
+
+### Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/techpulse.git
+cd techpulse
+
+# Install dependencies
+npm install
+
+# Create environment file
+cp .env.example .env
