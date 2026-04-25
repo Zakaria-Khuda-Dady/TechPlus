@@ -23,7 +23,7 @@ dates. Articles are loaded dynamically from MongoDB.
 Articles are listed with a **Load More** button for pagination, keeping the 
 page clean and fast without loading everything at once.
 
-![Article Feed](screenshots/article.png)
+![Article Feed](screenshots/Article.png)
 
 ---
 
@@ -38,7 +38,7 @@ REST APIs, frontend frameworks, and DevOps/CI-CD.
 ### Contact Page
 A contact form allowing visitors to send messages directly from the site.
 
-![Contact Page](screenshots/contact.png)
+![Contact Page](screenshots/ContactUs.png)
 
 ---
 
