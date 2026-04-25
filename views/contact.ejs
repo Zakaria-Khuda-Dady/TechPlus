@@ -1,0 +1,17 @@
+<div class="author">
+  <p class="author__tag">Get In Touch</p>
+  <h1 class="author__heading">Contact Us</h1>
+  <p class="author__body">Have a question or want to collaborate? Send us a message.</p>
+</div>
+
+<section style="margin-top: 40px; max-width: 500px;">
+  <% if (locals.success) { %>
+    <p style="color: var(--neon-cyan); font-family: 'Share Tech Mono', monospace; margin-bottom: 20px;">&gt; MESSAGE SENT. We'll get back to you soon.</p>
+  <% } %>
+  <form action="/contact" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="6" placeholder="Your Message" style="resize: vertical;" required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+</section>

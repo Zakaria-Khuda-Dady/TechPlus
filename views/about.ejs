@@ -1,0 +1,72 @@
+<div class="author">
+  <p class="author__tag">About TechPulse</p>
+  <h1 class="author__heading">We Write About What We Build.</h1>
+  <p class="author__body">TechPulse is a blog dedicated to practical web development, software engineering insights, and modern tech trends.</p>
+</div>
+
+<section class="about-section">
+  <div class="about-block">
+    <h2>Our Mission</h2>
+    <p>We believe great software starts with great knowledge. TechPulse was created to share real-world experience — from building APIs to deploying full-stack applications — in a clear and practical way.</p>
+  </div>
+
+  <div class="about-block">
+    <h2>What We Cover</h2>
+    <ul class="about-list">
+      <li>Node.js & Express.js development</li>
+      <li>MongoDB & database design</li>
+      <li>REST APIs & authentication</li>
+      <li>Frontend frameworks & tools</li>
+      <li>DevOps, deployment & CI/CD</li>
+    </ul>
+  </div>
+
+  <div class="about-block">
+    <h2>Built By</h2>
+    <p>This blog is built and maintained by Zakaria Khudadady — a full-stack developer passionate about clean code, scalable systems, and sharing knowledge with the developer community.</p>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    margin-top: 20px;
+    border-top: 1px solid var(--gray-light);
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .about-block h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gray);
+    margin-bottom: 12px;
+  }
+  .about-block p {
+    font-size: 1.05rem;
+    color: var(--black);
+    line-height: 1.8;
+    max-width: 650px;
+  }
+  .about-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .about-list li {
+    font-size: 1.05rem;
+    padding-left: 20px;
+    position: relative;
+    color: var(--black);
+  }
+  .about-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+</style>

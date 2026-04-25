@@ -1,0 +1,23 @@
+<div class="author">
+  <p class="author__tag">&gt; SYSTEM ONLINE_</p>
+  <h1 class="author__heading">Insights for the<br/><span class="neon-pink">Modern Developer.</span></h1>
+  <p class="author__body">Articles on web development, software engineering, and tech trends.</p>
+</div>
+
+<section class="articles">
+  <h2 class="articles__heading">// LATEST_ARTICLES</h2>
+  <ul class="article-ul">
+    <% data.forEach(post => { %>
+      <li>
+        <a href="/post/<%= post._id %>">
+          <span><%= post.title %></span>
+          <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+
+  <% if (nextPage !== null) { %>
+    <a href="/?page=<%= nextPage %>" class="pagination">LOAD MORE →</a>
+  <% } %>
+</section>

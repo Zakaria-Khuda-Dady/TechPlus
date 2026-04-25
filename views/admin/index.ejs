@@ -1,0 +1,31 @@
+<% if (locals.query && locals.query.registered) { %>
+  <p style="color: var(--neon-cyan); font-family: 'Share Tech Mono', monospace; margin-bottom: 16px;">&gt; Registered successfully. Please log in.</p>
+<% } %>
+
+<h3>Sign In</h3>
+
+<form action="/admin" method="POST">
+
+  <label for="username"><b>Username</b></label>
+  <input type="text" placeholder="Enter Username" name="username">
+
+  <label for="password"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" name="password">
+
+  <input type="submit" value="Login" class="btn">
+
+</form>
+
+
+<h3>Register</h3>
+<form action="/register" method="POST">
+
+  <label for="username"><b>Username</b></label>
+  <input type="text" placeholder="Enter Username" name="username">
+
+  <label for="password"><b>Password</b></label>
+  <input type="password" placeholder="Enter Password" name="password">
+
+  <input type="submit" value="Register" class="btn">
+
+</form>
