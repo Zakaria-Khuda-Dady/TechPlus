@@ -15,7 +15,7 @@ an admin panel, and a clean cyberpunk-inspired UI.
 The landing page displays the latest developer articles with titles and publish 
 dates. Articles are loaded dynamically from MongoDB.
 
-![Home Page](screenshots/home.png)
+![Home Page](screenshots/Home.png)
 
 ---
 
