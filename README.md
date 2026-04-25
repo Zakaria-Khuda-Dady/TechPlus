@@ -23,7 +23,7 @@ dates. Articles are loaded dynamically from MongoDB.
 Articles are listed with a **Load More** button for pagination, keeping the 
 page clean and fast without loading everything at once.
 
-![Article Feed](screenshots/articles.png)
+![Article Feed](screenshots/article.png)
 
 ---
 
@@ -31,7 +31,7 @@ page clean and fast without loading everything at once.
 Describes the mission of TechPulse and the topics covered — Node.js, MongoDB, 
 REST APIs, frontend frameworks, and DevOps/CI-CD.
 
-![About Page](screenshots/about.png)
+![About Page](screenshots/About.png)
 
 ---
 
@@ -46,7 +46,7 @@ A contact form allowing visitors to send messages directly from the site.
 A secure admin panel protected by JWT authentication. Admins can sign in or 
 register to manage articles — create, edit, and delete posts.
 
-![Admin Panel](screenshots/admin.png)
+![Admin Panel](screenshots/SignIn.png)
 
 ---
 
