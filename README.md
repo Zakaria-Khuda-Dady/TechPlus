@@ -1,7 +1,7 @@
 # TechPulse — Developer Blog Platform
 
 A full-stack blog platform built for developers, featuring article management, 
-an admin panel, and a clean cyberpunk-inspired UI.
+a Sign in panel, and a clean cyberpunk-inspired UI.
 
 ## Live Demo
 
