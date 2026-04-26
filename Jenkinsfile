@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDS = credentials('dockerhub-creds')
-        IMAGE_NAME = 'zakaria-khuda-dady/techpulse'
+        IMAGE_NAME = 'zakaria-khuda-dady/techplus'
     }
 
     stages {
