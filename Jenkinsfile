@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDS = credentials('dockerhub-creds')
-        IMAGE_NAME = 'zakaria-khuda-dady/techplus'
+        IMAGE_NAME = 'zakaria964/techplus'
     }
 
     stages {
@@ -32,10 +32,10 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                    docker stop techpulse || true
-                    docker rm techpulse || true
+                    docker stop techplus || true
+                    docker rm techplus || true
                     docker run -d \
-                        --name techpulse \
+                        --name techplus \
                         -p 5000:5000 \
                         --env-file .env \
                         ${IMAGE_NAME}:latest
@@ -46,7 +46,7 @@ pipeline {
 
     post {
         success {
-            echo 'TechPulse deployed successfully!'
+            echo 'TechPlus deployed successfully!'
         }
         failure {
             echo 'Pipeline failed — check the logs.'
