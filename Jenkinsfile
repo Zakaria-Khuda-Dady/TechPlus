@@ -15,13 +15,7 @@ pipeline {
                     url: 'https://github.com/Zakaria-Khuda-Dady/TechPlus.git'
             }
         }
-
-        stage('Install Dependencies') {
-            steps {
-                sh 'npm install'
-            }
-        }
-
+        
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t ${IMAGE_NAME}:latest .'
