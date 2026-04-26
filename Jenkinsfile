@@ -4,6 +4,8 @@ pipeline {
     environment {
         DOCKERHUB_CREDS = credentials('dockerhub-creds')
         IMAGE_NAME = 'zakaria964/techplus'
+        MONGODB_URI = credentials('MONGODB_URI')
+        JWT_SECRET = credentials('JWT_SECRET')
     }
 
     stages {
@@ -37,8 +39,9 @@ pipeline {
                     docker run -d \
                         --name techplus \
                         -p 5000:5000 \
-                        --env-file .env \
-                        ${IMAGE_NAME}:latest
+                        -e MONGODB_URI=$MONGODB_URI \
+                        -e JWT_SECRET=$JWT_SECRET \
+                        zakaria964/techplus:latest
                 '''
             }
         }
