@@ -4,7 +4,7 @@ A full-stack blog platform built for developers, featuring article management, a
 
 ## Live Demo
 
-> [Coming soon — deploying to AWS EC2]
+> http://54.81.137.86:5000
 
 ---
 
