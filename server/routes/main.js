@@ -41,7 +41,7 @@ router.get("", async (req, res) => {
 
 router.get("", async (req, res) => {
   const locals = {
-    title: "NodeJs Blog",
+    title: "TechPlus",
     description: "Simple Blog created with NodeJs, Express & MongoDb.",
   };
 
