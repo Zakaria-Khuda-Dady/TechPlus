@@ -69,6 +69,9 @@ A secure admin panel protected by JWT authentication. Admins can sign in or regi
 | Authentication | JWT + Bcrypt |
 | Session Storage | connect-mongo |
 | Styling | Custom CSS |
+| Containerization | Docker |
+| CI/CD | Jenkins |
+| Hosting | AWS EC2 |
 
 ---
 
