@@ -1,10 +1,17 @@
-# TechPulse — Developer Blog Platform
+# TechPulse — Developer Knowledge Hub
 
-A full-stack blog platform built for developers, featuring article management, an admin panel, and a clean cyberpunk-inspired UI.
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazon-aws&logoColor=white)
+![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=flat&logo=jenkins&logoColor=white)
+![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat&logo=nginx&logoColor=white)
+
+A full-stack developer knowledge hub featuring curated tech articles, an admin panel, and a clean cyberpunk-inspired UI — deployed with a full CI/CD pipeline on AWS.
 
 ## Live Demo
 
-> http://54.81.137.86:5000
+**[https://techplus.zak-dev.com](https://techplus.zak-dev.com)**
 
 ---
 
@@ -39,9 +46,13 @@ A contact form allowing visitors to send messages directly from the site.
 ---
 
 ### Admin Panel
-A secure admin panel protected by JWT authentication. Admins can sign in or register to manage articles — create, edit, and delete posts.
+A secure admin panel protected by JWT authentication. Admins can sign in to manage articles — create, edit, and delete posts.
 
-![Admin Panel](screenshots/SignIn.png)
+![Admin Sign In](screenshots/SignIn.png)
+
+![Admin Dashboard](screenshots/AdminDashboard.png)
+
+![Create Article](screenshots/CreateArticle.png)
 
 ---
 
@@ -53,7 +64,7 @@ A secure admin panel protected by JWT authentication. Admins can sign in or regi
 - Admin panel with secure login and registration
 - Create, edit, and delete articles (admin only)
 - Contact form
-- Session-based authentication with JWT
+- JWT authentication with Bcrypt password hashing
 - MongoDB session persistence
 
 ---
@@ -71,7 +82,38 @@ A secure admin panel protected by JWT authentication. Admins can sign in or regi
 | Styling | Custom CSS |
 | Containerization | Docker |
 | CI/CD | Jenkins |
+| Web Server | Nginx (reverse proxy + SSL) |
 | Hosting | AWS EC2 |
+| DNS | AWS Route 53 |
+| SSL | Let's Encrypt (Certbot) |
+
+---
+
+## Architecture
+
+```
+Git Push → Jenkins Pipeline → Docker Build & Push
+                                        ↓
+                              Docker Hub Registry
+                                        ↓
+                           AWS EC2 (Docker Pull + Run)
+                                        ↓
+                       Nginx Reverse Proxy + SSL (Let's Encrypt)
+                                        ↓
+                          https://techplus.zak-dev.com
+```
+
+---
+
+## CI/CD Pipeline
+
+Every push to `main` triggers an automated pipeline:
+
+1. Jenkins detects the push via GitHub webhook
+2. Pulls latest code and builds a Docker image
+3. Pushes image to Docker Hub (`zakaria964/techplus`)
+4. SSHs into AWS EC2 and pulls the latest image
+5. Restarts the container automatically
 
 ---
 
@@ -106,6 +148,28 @@ Visit `http://localhost:5000`
 
 ---
 
+## Docker
+
+```bash
+docker pull zakaria964/techplus:latest
+docker run -p 5000:5000 \
+  -e MONGODB_URI=your_mongodb_uri \
+  -e JWT_SECRET=your_jwt_secret \
+  zakaria964/techplus
+```
+
+---
+
+## Environment Variables
+
+| Variable | Description |
+|---|---|
+| `MONGODB_URI` | MongoDB connection string |
+| `JWT_SECRET` | Secret key for JWT signing |
+| `PORT` | App port (default 5000) |
+
+---
+
 ## Project Structure
 
 ```
@@ -120,21 +184,11 @@ TechPlus/
 │   └── admin/         # Admin panel views
 ├── public/            # Static assets (CSS, JS, images)
 ├── screenshots/       # App preview images
+├── Dockerfile
+├── Jenkinsfile
 ├── app.js             # Entry point
-└── .env               # Environment variables
+└── .env               # Environment variables (not committed)
 ```
-
----
-
-## Deployment
-
-This project is deployed using a full CI/CD pipeline:
-
-- **Docker** — containerized for consistent environments
-- **Jenkins** — automated build, test, and deploy on every git push
-- **AWS EC2** — hosted on a Linux server
-
-Every `git push` to `main` automatically builds and deploys the latest version.
 
 ---
 
