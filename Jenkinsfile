@@ -32,20 +32,23 @@ pipeline {
         }
 
         stage('Deploy') {
-            steps {
-                sh '''
-                    docker stop techplus || true
-                    docker rm techplus || true
-                    docker run -d \
-                        --name techplus \
-                        -p 5000:5000 \
+       stage('Deploy') {
+    steps {
+        sshagent(['ec2-ssh-key']) {
+            sh '''
+                ssh -o StrictHostKeyChecking=no ec2-user@54.81.137.86 "
+                    docker pull zakaria964/techplus:latest &&
+                    docker stop techplus || true &&
+                    docker rm techplus || true &&
+                    docker run -d --name techplus -p 5000:5000 \
                         -e MONGODB_URI=$MONGODB_URI \
                         -e JWT_SECRET=$JWT_SECRET \
                         zakaria964/techplus:latest
-                '''
-            }
+                "
+            '''
         }
     }
+}
 
     post {
         success {
