@@ -50,10 +50,6 @@ A secure admin panel protected by JWT authentication. Admins can sign in to mana
 
 ![Admin Sign In](screenshots/SignIn.png)
 
-![Admin Dashboard](screenshots/AdminDashboard.png)
-
-![Create Article](screenshots/CreateArticle.png)
-
 ---
 
 ## Features
@@ -115,6 +111,9 @@ Every push to `main` triggers an automated pipeline:
 4. SSHs into AWS EC2 and pulls the latest image
 5. Restarts the container automatically
 
+![Jenkins Pipeline](screenshots/jenkins.png)
+
+![Docker Hub](screenshots/dockerHub.png)
 ---
 
 ## Getting Started
